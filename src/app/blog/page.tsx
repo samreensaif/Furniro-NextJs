@@ -34,7 +34,6 @@ interface RelatedPost {
 export default function Blog() {
   const [res, setRes] = useState<Ires[]>([]);
   const [rPost, setRPost] = useState<RelatedPost[]>([]);
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,9 +62,6 @@ export default function Blog() {
 
     fetchData();
   }, []);
-
-
-  
 
   return (
     <div className="w-full relative bg-white flex flex-col items-start justify-start leading-normal tracking-normal">
@@ -98,11 +94,7 @@ export default function Blog() {
           {/* sidebar */}
           <aside className="relative w-full lg:w-1/3 flex flex-col items-center gap-6">
             <div className="relative w-full">
-              <Input
-              
-              placeholder="Search..." 
-              
-              className="mb-6 h-12 w-full" />
+              <Input placeholder="Search..." className="mb-6 h-12 w-full" />
               <div className="absolute top-3 right-4">
                 <Search />
               </div>
@@ -130,22 +122,21 @@ export default function Blog() {
               <h1 className="text-2xl font-medium mb-6">Recent Posts</h1>
 
               {rPost.map((item, index) => {
-                return(
-                <div className="flex gap-3 mb-6" key={index}>
-                  <Image
-                    src={item.relatedPostImage}
-                    width={80}
-                    height={80}
-                    alt="rp1"
-                  />
-                  <div className="flex flex-col">
-                    <p>{item.relatedPostTitle}</p>
-                    <p className="text-gray-400">{item.relatedPostDate}</p>
+                return (
+                  <div className="flex gap-3 mb-6" key={index}>
+                    <Image
+                      src={item.relatedPostImage}
+                      width={80}
+                      height={80}
+                      alt="rp1"
+                    />
+                    <div className="flex flex-col">
+                      <p>{item.relatedPostTitle}</p>
+                      <p className="text-gray-400">{item.relatedPostDate}</p>
+                    </div>
                   </div>
-                </div>
-
-              )}
-             )}
+                );
+              })}
             </div>
           </aside>
         </section>

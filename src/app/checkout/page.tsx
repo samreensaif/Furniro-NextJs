@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { Suspense, useState } from "react";
@@ -101,7 +99,10 @@ const CheckoutFormContent = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Carrier ID */}
               <div>
-                <Label htmlFor="carrier_id" className="block text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="carrier_id"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Carrier ID
                 </Label>
                 <Input
@@ -115,17 +116,29 @@ const CheckoutFormContent = () => {
 
               {/* Service Code */}
               <div>
-                <Label htmlFor="service_code" className="block text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="service_code"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Service Code
                 </Label>
                 <Select value={serviceCode} onValueChange={setServiceCode}>
-                  <SelectTrigger id="service_code" className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <SelectTrigger
+                    id="service_code"
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
                     <SelectValue placeholder="Select a service code" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="usps_priority_mail_express">USPS Priority Mail Express</SelectItem>
-                    <SelectItem value="usps_priority_mail">USPS Priority Mail</SelectItem>
-                    <SelectItem value="usps_first_class_mail">USPS First Class Mail</SelectItem>
+                    <SelectItem value="usps_priority_mail_express">
+                      USPS Priority Mail Express
+                    </SelectItem>
+                    <SelectItem value="usps_priority_mail">
+                      USPS Priority Mail
+                    </SelectItem>
+                    <SelectItem value="usps_first_class_mail">
+                      USPS First Class Mail
+                    </SelectItem>
                     <SelectItem value="ups_ground">UPS Ground</SelectItem>
                     <SelectItem value="fedex_ground">FedEx Ground</SelectItem>
                   </SelectContent>
@@ -135,7 +148,10 @@ const CheckoutFormContent = () => {
               {/* Name Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="ship_to_fname" className="block text-sm font-medium text-gray-700">
+                  <Label
+                    htmlFor="ship_to_fname"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     First Name
                   </Label>
                   <Input
@@ -147,7 +163,10 @@ const CheckoutFormContent = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="ship_to_lname" className="block text-sm font-medium text-gray-700">
+                  <Label
+                    htmlFor="ship_to_lname"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Last Name
                   </Label>
                   <Input
@@ -163,7 +182,10 @@ const CheckoutFormContent = () => {
               {/* Address Fields */}
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="ship_to_company" className="block text-sm font-medium text-gray-700">
+                  <Label
+                    htmlFor="ship_to_company"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Company Name
                   </Label>
                   <Input
@@ -175,7 +197,10 @@ const CheckoutFormContent = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="ship_to_address" className="block text-sm font-medium text-gray-700">
+                  <Label
+                    htmlFor="ship_to_address"
+                    className="block text-sm font-medium text-gray-700"
+                  >
                     Street Address
                   </Label>
                   <Input
@@ -188,7 +213,10 @@ const CheckoutFormContent = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div>
-                    <Label htmlFor="ship_to_city" className="block text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="ship_to_city"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       City
                     </Label>
                     <Input
@@ -200,7 +228,10 @@ const CheckoutFormContent = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="ship_to_state" className="block text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="ship_to_state"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       State
                     </Label>
                     <Input
@@ -212,7 +243,10 @@ const CheckoutFormContent = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="ship_to_postal_code" className="block text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="ship_to_postal_code"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Postal Code
                     </Label>
                     <Input
@@ -224,7 +258,10 @@ const CheckoutFormContent = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="ship_to_country" className="block text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="ship_to_country"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Country
                     </Label>
                     <Input
@@ -236,7 +273,10 @@ const CheckoutFormContent = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="ship_to_phone" className="block text-sm font-medium text-gray-700">
+                    <Label
+                      htmlFor="ship_to_phone"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Phone
                     </Label>
                     <Input
@@ -252,7 +292,10 @@ const CheckoutFormContent = () => {
 
               {/* Additional Information */}
               <div>
-                <Label htmlFor="additional" className="block text-sm font-medium text-gray-700">
+                <Label
+                  htmlFor="additional"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Additional Information
                 </Label>
                 <Textarea
@@ -270,7 +313,9 @@ const CheckoutFormContent = () => {
                 Submit
               </Button>
 
-              {shipmentResponse && <JsonResponseViewer data={shipmentResponse} />}
+              {shipmentResponse && (
+                <JsonResponseViewer data={shipmentResponse} />
+              )}
             </form>
           </div>
         </div>
@@ -286,17 +331,12 @@ const CheckoutFormContent = () => {
                 </div>
 
                 <div className="flex justify-between text-gray-600">
-                  <span>
-                    {productName} 
-                  </span>
+                  <span>{productName}</span>
                   <span>Rs. {subTotal}</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
-                <span>Total number of Items</span>
-                  <span>
-                    {totalItems} 
-                  </span>
-                  
+                  <span>Total number of Items</span>
+                  <span>{totalItems}</span>
                 </div>
 
                 <div className="flex justify-between border-t pt-4">
@@ -345,7 +385,9 @@ const CheckoutFormContent = () => {
                   for other purposes described in our privacy policy.
                 </div>
 
-                <Link href={`/confirmation?productName=${productName}&totalItems=${totalItems}&totalPrice=${totalPrice}&subTotal=${subTotal}`}>
+                <Link
+                  href={`/confirmation?productName=${productName}&totalItems=${totalItems}&totalPrice=${totalPrice}&subTotal=${subTotal}`}
+                >
                   <Button className="w-full mt-4" size="lg">
                     Place order
                   </Button>
