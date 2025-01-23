@@ -4,10 +4,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, Heart, ShoppingCart } from 'lucide-react'
+import { Search, Heart, ShoppingCart, AlignLeft } from 'lucide-react'
 import { useAtom } from 'jotai'
 import { searchName } from '@/globalState/globalState'
 import {  ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { Button } from './ui/button'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -101,15 +102,10 @@ export default function Navbar() {
 
       {/* Mobile View - Hamburger Menu */}
       <div className="sm:hidden  flex items-center justify-between px-4 py-0 ">
-        <button
-          aria-label="Menu"
-          className="p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className="block w-6 h-1 bg-black mb-1 transition-transform duration-300" />
-          <span className="block w-6 h-1 bg-black mb-1 transition-transform duration-300" />
-          <span className="block w-6 h-1 bg-black transition-transform duration-300" />
-        </button>
+        <Button variant={"no"}  onClick={() => setMenuOpen(!menuOpen)}>
+      <AlignLeft color='#d1b238' style={{ width: 30, height: 30 }}/>
+      </Button>
+       
       </div>
 
       {/* Sliding Mobile Menu */}
@@ -144,7 +140,23 @@ export default function Navbar() {
           </button>
           </Link>
 
-          
+           {/* Add UserButton in Mobile View */}
+           <ClerkProvider>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton
+                  appearance={{
+                    elements: {
+                      rootBox: 'custom-user-button',
+                      avatarBox: 'custom-avatar',
+                      popoverCard: 'custom-popover-card',
+                    },
+                  }}
+                />
+              </SignedIn>
+            </ClerkProvider>
         </div>
 
         </div>

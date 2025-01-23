@@ -67,7 +67,8 @@ export default async function OurProducts() {
                   <Image
                     src={item.productImage}
                     alt={item.title}
-                    objectFit="cover"
+                    style={{ objectFit: 'cover' }}
+                    
                     fill
                     className="transition-transform group-hover:scale-105"
                   />
@@ -81,7 +82,7 @@ export default async function OurProducts() {
                     {item.isNew === true ? "New" : "Old"}
                   </div>
                 )}
-                {item.dicountPercentage && (
+                {item.dicountPercentage>=0 && (
                   <div className="absolute right-4 top-4 rounded-full px-3 py-1 text-sm text-white bg-red-500">
                     -{item.dicountPercentage}%
                   </div>

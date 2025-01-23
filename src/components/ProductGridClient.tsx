@@ -78,6 +78,7 @@ export default function ProductGridClient({ initialCards }: ProductGridClientPro
                 <Image
                   src={item.productImage || "/placeholder.svg"}
                   alt={item.title}
+                  
                   fill
                   className="object-center transition-transform group-hover:scale-105"
                 />
