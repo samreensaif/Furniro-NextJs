@@ -4,9 +4,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, Heart, ShoppingCart, UserCircle } from 'lucide-react'
+import { Search, Heart, ShoppingCart } from 'lucide-react'
 import { useAtom } from 'jotai'
 import { searchName } from '@/globalState/globalState'
+import {  ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -74,11 +75,27 @@ export default function Navbar() {
             <ShoppingCart className="w-6 h-6" />
           </button>
           </Link>
-          <Link href={'/login'}>
-          <button aria-label="Account" className="p-2 hover:bg-black/5 rounded-full transition-colors">
-            <UserCircle className="w-6 h-6" />
-          </button>
-          </Link>
+
+<ClerkProvider>
+          {/* User Account Section */}
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton
+              appearance={{
+                elements: {
+                  rootBox: "custom-user-button",
+                  avatarBox: "custom-avatar",
+                  popoverCard: "custom-popover-card",
+                },
+              }}
+            />
+          </SignedIn>
+
+          </ClerkProvider>
+
+
         </div>
       </div>
 
@@ -126,11 +143,8 @@ export default function Navbar() {
             <ShoppingCart className="w-6 h-6" />
           </button>
           </Link>
-          <Link href={'/login'}>
-          <button aria-label="Account" className="p-2 hover:bg-black/5 rounded-full transition-colors">
-            <UserCircle className="w-6 h-6" />
-          </button>
-          </Link>
+
+          
         </div>
 
         </div>

@@ -23,7 +23,7 @@ export default function Wishlist() {
       const storedWishlist = localStorage.getItem("wishlist");
 
 
-      console.log("💛💚", storedWishlist);
+      
       if (storedWishlist) {
         try {
           const parsedWishlist = JSON.parse(storedWishlist);

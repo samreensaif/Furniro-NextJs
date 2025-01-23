@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ClerkProvider} from '@clerk/nextjs';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,14 +26,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar/>
+        {/* <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton 
+            appearance={{
+              elements: {
+                rootBox: "custom-user-button", // Apply a class for root styling
+                avatarBox: "custom-avatar", // Style the avatar box
+                popoverCard: "custom-popover-card", // Style the dropdown
+              },
+            }}
+            
+            
+            />
+          </SignedIn> */}
         {children}
         <Footer/>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

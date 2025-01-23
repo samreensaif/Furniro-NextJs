@@ -11,10 +11,7 @@ async function Confirmation({searchParams}:{searchParams : Promise<{productName:
 
 const{ productName, totalItems,totalPrice,subTotal}=await searchParams
 
-console.log("🧓👩‍🦰",searchParams)
-console.log("🧓",totalItems)
-console.log("🧓",totalPrice)
-console.log("🧓",productName)
+
   return (
     <div className='min-h-screen bg-white px-4 md:px-8 lg:px-12'>
 

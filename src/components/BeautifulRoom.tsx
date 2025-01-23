@@ -33,17 +33,17 @@ export default function BeautifulRoom() {
 
         {/* 1 */}
         <div className=" relative xsm:w-[328px] xsm:h-[582px] exsm:w-[280px] exsm:h-[480px]">
-          <Image src="/room1.png" alt="room1" layout='fill' objectFit="cover"></Image>
+          <Image src="/room1.png" alt="room1" fill style={{ objectFit: 'cover' }}></Image>
         </div>
 
         {/* 2 */}
         <div className=" relative xsm:w-[302px] xsm:h-[486px] exsm:w-[280px] exsm:h-[480px]">
-          <Image src="/room2.png" alt="room2" layout='fill' objectFit="cover"></Image>
+          <Image src="/room2.png" alt="room2" fill style={{ objectFit: 'cover' }}></Image>
         </div>
         
         {/* 3 */}
         <div className=" relative xsm:w-[302px] xsm:h-[486px] exsm:w-[280px] exsm:h-[480px] ">
-          <Image src="/room3.png" alt="room3" layout='fill' objectFit="cover"></Image>
+          <Image src="/room3.png" alt="room3" fill style={{ objectFit: 'cover' }}></Image>
         </div>
 
       </div>

@@ -45,7 +45,9 @@ function Spmain(props: {
   const [cartVisible, setCartVisible] = useState(false);
   const [addToCart, setAddToCart] = useState(1);
   const [cartItem, setCartItem] = useState<IProduct[]>([]);
-// const [total, setTotal] = useState(0);
+
+  
+
   const searchParams = useSearchParams();
 
   // Function for increasing quantity
@@ -159,7 +161,7 @@ function Spmain(props: {
     wishlist.push({ id, productName, productImage, productPrice });
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    console.log("💦☮👱‍♂️",localStorage.getItem("wishlist"))
+    
   }
 
   return (
@@ -281,17 +283,16 @@ function Spmain(props: {
           </div>
 
           {/* Main Image */}
-          <div className="relative w-full max-w-[300px] md:max-w-[423px] h-[300px] md:h-[500px] rounded-lg flex items-center justify-center ml-[50px]">
-            <Image
-              src={productImage}
-              alt="Main Image"
-              // width={480}
-              // height={480}
-              objectFit="cover"
-              layout="fill"
-              className="object-center rounded-md"
-            />
-          </div>
+          <div className="relative bg-red-500 w-full max-w-[300px] md:max-w-[423px] h-[300px] md:h-[500px] rounded-lg flex items-center justify-center mx-auto exsm:mx-1 md:ml-[50px]">
+  <Image
+    src={productImage}
+    alt="Main Image"
+    fill
+    style={{ objectFit: "cover" }}
+    className="object-center rounded-md"
+  />
+</div>
+
         </div>
 
         <div className="w-full lg:w-[606px] space-y-6">

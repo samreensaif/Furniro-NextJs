@@ -79,7 +79,7 @@ export default function ProductGridClient({ initialCards }: ProductGridClientPro
                   src={item.productImage || "/placeholder.svg"}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform group-hover:scale-105"
+                  className="object-center transition-transform group-hover:scale-105"
                 />
               </div>
 
@@ -101,7 +101,7 @@ export default function ProductGridClient({ initialCards }: ProductGridClientPro
                     Add to Cart
                   </Button>
                 </Link>
-                <div className="flex justify-between w-[202px] py-2">
+                <div className="flex justify-center w-[202px] py-2">
                   <Button variant="ghost" size="sm" className="text-white">
                     <Share2 className="h-4 w-4 mr-2" /> Share
                   </Button>
@@ -120,6 +120,15 @@ export default function ProductGridClient({ initialCards }: ProductGridClientPro
                   <p className="text-sm text-gray-500">{item.description.slice(0, 100)}...</p>
                 </CardContent>
                 <CardFooter className="flex flex-col items-start gap-4 p-4">
+                {item.tags && (
+
+
+<div className="  px-3 py-1 text-sm text-white flex flex-wrap gap-2">
+  {item.tags.map((tag, index) => (
+    <span key={index} className="bg-gray-200 text-black px-2 rounded-md  py-1 ">{tag}</span>
+  ))}
+</div>
+)}
                   <div className="flex items-center gap-2">
                     <span className="text-lg font-bold">Rs. {item.price}</span>
                   </div>
